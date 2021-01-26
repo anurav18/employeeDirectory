@@ -2,22 +2,17 @@ import React from "react";
 import "./style.css"
 
 function employeeTable(props){
-return(<div class="container">
-  
- <table class="table table-striped"> 
- <tbody>
+  let dob = props.DOB.substring(0,10);
+  console.log(dob);
+return(
   <tr>
-    <td class="tableRow"><img src={props.image}></img></td>
-    <td class="tableRow">{props.name}</td>
-    <td class="tableRow">{props.phone}</td>
-    <td class="tableRow">{props.email}</td>
-    <td class="tableRow">{props.DOB}</td>
+    <td><img alt={props.fname} src={props.image}></img></td>
+    <td>{props.tname}.{props.fname} {props.lname}</td>
+    <td>{props.phone}</td>
+    <td>{props.email}</td>
+<td>{dob}</td>
   </tr>
-  </tbody>
-</table> 
-
-</div>
-
+  
 );
 }
 

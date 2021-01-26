@@ -16,33 +16,26 @@ class App extends Component{
   render(){
     return (
     <Wrapper>
-      <Header></Header> 
-<div class="container">
-  <table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">Image</th>
-    <th scope="col">Name</th>
-    <th scope="col">Phone</th>
-    <th scope="col">Email</th>
-    <th scope="col">DOB</th>
-  </tr>
-  </thead>
-  <tbody>
-  {this.state.employees.map(employee => (
-    <tr>
-     <td ><img src={employee.picture.thumbnail}></img></td>
-     <td >{employee.name.first}</td>
-     <td >{employee.phone}</td>
-     <td >{employee.email}</td>
-     <td >{employee.dob.date}</td>
-   </tr>   
-   ))}
-  </tbody>
-</table>
- </div>     
-     
-    </Wrapper>
+    <Header></Header> 
+   <div class="container">
+     <table class="table table-striped">
+       <thead>
+          <TableHeader/>
+       </thead>
+       <tbody>
+            {this.state.employees.map(employee => (
+                 <EmployeeTable  key={employee.name.first} image={employee.picture.thumbnail} 
+                    tname ={employee.name.title}
+                    fname={employee.name.first} 
+                    lname ={employee.name.last} 
+                    phone={employee.phone}  
+                    email={employee.email} 
+                    DOB={employee.dob.date}/>
+              ))}
+        </tbody>
+      </table>
+     </div>
+     </Wrapper>
       );
     };
 }
