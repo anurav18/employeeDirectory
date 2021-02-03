@@ -1,18 +1,20 @@
 import React from "react";
-import "./style.css"
+
 
 function employeeTable(props){
-  let dob = props.DOB.substring(0,10);
-  console.log(dob);
-return(
-  <tr>
-    <td><img alt={props.fname} src={props.image}></img></td>
-    <td>{props.tname}.{props.fname} {props.lname}</td>
-    <td>{props.phone}</td>
-    <td>{props.email}</td>
-<td>{dob}</td>
-  </tr>
   
+return(
+<tbody>
+    {props.result.map(item => (
+    <tr>
+      <td><img alt={item.name.first} src={item.picture.thumbnail}></img></td>
+      <td>{item.name.title}.{item.name.first} {item.name.last}</td>
+      <td>{item.phone}</td>
+      <td>{item.email}</td>
+       <td>{item.dob.date.substring(0,10)}</td>
+   </tr>
+    ))}
+ </tbody>  
 );
 }
 
