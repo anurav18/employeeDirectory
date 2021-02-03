@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Header/style.css"],"names":[],"mappings":"AAAA,QACI,qBAAsB,CACtB,2BAA4B,CAC5B,UACJ","file":"main.6a3ca0c6.chunk.css","sourcesContent":["#header{\n    background-color: navy;\n    border-bottom: 4px solid red; \n    color:white;\n}\n\n"]}
